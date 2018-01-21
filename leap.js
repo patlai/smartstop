@@ -1,4 +1,4 @@
-var cats = {};
+
 
 //apikey123
 //fc328bb6a26e4942add142e154465804
@@ -29,21 +29,6 @@ window.onresize = function(){
 }
 
 Leap.loop(function(frame) {
-
-  // frame.hands.forEach(function(hand, index) {
-    
-  //   var cat = ( cats[index] || (cats[index] = new Cat()) );    
-  //   cat.setTransform(hand.screenPosition(), hand.roll());
-    
-  // });
-
-// var pointables = frame.pointables;
-// for(i = 0; i < pointables.length; i++){
-//   console.log(pointables[i].id + ", position: " + pointables[i].tipPosition);
-// }
-
-
-
 // get the first hand since the menu is only intended to be operated using one hand
 var hand = frame.hands[0];
 // if a hand is detected in the frame...
@@ -128,29 +113,29 @@ var InitButtonsArray = function(){
   console.log(buttonPositions);
 }
 
-var Cat = function() {
-  var cat = this;
-  var img = document.createElement('img');
-  img.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/109794/cat_2.png';
-  img.style.position = 'absolute';
-  img.onload = function () {
-    cat.setTransform([window.innerWidth/2,window.innerHeight/2], 0);
-    document.body.appendChild(img);
-  }
+// var Cat = function() {
+//   var cat = this;
+//   var img = document.createElement('img');
+//   img.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/109794/cat_2.png';
+//   img.style.position = 'absolute';
+//   img.onload = function () {
+//     cat.setTransform([window.innerWidth/2,window.innerHeight/2], 0);
+//     document.body.appendChild(img);
+//   }
   
-  cat.setTransform = function(position, rotation) {
+//   cat.setTransform = function(position, rotation) {
 
-    img.style.left = position[0] - img.width  / 2 + 'px';
-    img.style.top  = position[1] - img.height / 2 + 'px';
+//     img.style.left = position[0] - img.width  / 2 + 'px';
+//     img.style.top  = position[1] - img.height / 2 + 'px';
 
-	img.style.transform = 'rotate(' + -rotation + 'rad)';
+// 	img.style.transform = 'rotate(' + -rotation + 'rad)';
 	
-    img.style.webkitTransform = img.style.MozTransform = img.style.msTransform =
-    img.style.OTransform = img.style.transform;
+//     img.style.webkitTransform = img.style.MozTransform = img.style.msTransform =
+//     img.style.OTransform = img.style.transform;
 
-  };
+//   };
 
-};
+// };
 
 var simulateClick = function (elem) {
   // Create our event (with options)
