@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+        <script src="http://js.leapmotion.com/leap-0.6.3.js"></script>
+        <script src="http://js.leapmotion.com/leap-plugins-0.1.8.js"></script>
+        <script type="text/javascript" src="BAScript.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9OYv9hLx225QrcMDux5vCQIuMchrpsE&callback=initMap&libraries=places"
+        async defer></script>
+
+
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        
+        <title>Map Main Menu</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+          /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+          #map {
+            display: inline-block;
+            position: absolute;
+            height: 90%;
+            width: 70%;
+          }
+          #busSched {
+            display: inline-block;
+            position: absolute;
+            height: 90%;
+            width: 30%;
+            padding-left: 70%;
+          }
+          /* Optional: Makes the sample page fill the window. */
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }     
+        </style>
+    </head>
+
+    <nav>
+         <div>
+            <h3>Select elements to be displayed on the map</h3>
+            <button id = "button1" onclick="displayRestaurants()">Restaurants</button>
+            <button id = "button2" onclick="displayShopping()">Shopping</button>
+            <button id = "button3" onclick="myLocation()">My Location</button>
+            <button id = "button4" onclick="displayBusStops()">Nearest Bus Stop</button>
+        </div>
+    </nav>
+    
+    <body>
+        <div id="busSched">
+             <iframe id="busStopSite" src="blankpage.html" height="100%" width="100%">
+                    <p>Your browser does not support iframes.</p>
+             </iframe>
+        </div>
+        
+        <div id="map"></div>
+
+    </body>
+    
+    
+
+</html>

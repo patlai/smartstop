@@ -17,9 +17,11 @@ Leap.loop(function(frame) {
 
 	  // scroll if the cursor is at the top 10% or bottom 15% of the screen;
 	  if(newYPosition > 0.9*screenHeight){
-	  	 window.scrollBy(0, -10);
+	  	 //window.scrollBy(0, -10);
+	  	 map.setZoom(map.zoom + 1);
 	  } else if(newYPosition < 0.15 * screenHeight){
-	  	window.scrollBy(0, 10);
+	  	//window.scrollBy(0, 10);
+	  	map.setZoom(map.zoom - 1);
 	  }
 
 	  // click detection
@@ -29,6 +31,10 @@ Leap.loop(function(frame) {
           console.log("Circle Gesture");
           window.location.href = 'leap.html';
           break;
+      case "screenTap":
+          map.zoom = map.zoom + 5;
+          break;
+
 	    }
 	  });
 	}
