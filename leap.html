@@ -1,0 +1,54 @@
+<head>
+	<script src="http://js.leapmotion.com/leap-0.6.3.js"></script>
+	<script src="http://js.leapmotion.com/leap-plugins-0.1.8.js"></script>
+	
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	 <script src="js/bootstrap.js"></script>
+
+	<script src="leap.js"></script>
+</head>
+<body style = "margin:0; padding:0;">
+	<div id="output"></div>
+	<div id="out"></div>
+	
+	<div class="container" style="width: 100%; height:100%">
+		<div class="row" style="height:25%">
+			<img src = "smartstop.png" style="width: 100%; height:100%; object-fit:cover;"/>
+		</div>
+		  <div class="row" style="height:25%">
+		    <div class="col-md-6 padding-0">
+		      <button type="button" class="btn btn-primary btn-lg btn-block" id="weatherButton" style="width:110%;" onclick="window.location.href='weather.html'">Weather</button>
+		    </div>
+		    <div class="col-md-6 padding-0">
+		      <button type="button" class="btn btn-success btn-lg btn-block" id="busScheduleButton" style="width:110%; background-color: #42f46b;">Bus Schedule</button>
+		    </div>
+		  </div>
+		<div class="row" style="height:25%">
+		    <div class="col-md-6 padding-0">
+		      <button type="button" class="btn btn-info btn-lg btn-block" id="bixiButton" style="width:110%; background-color: #7719c4">Bixi Stands</button>
+		    </div>
+		    <div class="col-md-6 padding-0">
+		      <button type="button" class="btn btn-warning btn-lg btn-block" id="drawButton" style="width:110%; background-color: #cc0ebf">WiFi Finder</button>
+		    </div>
+		</div>
+		<div class="row" style="height:25%">
+		    <div class="col-md-6 padding-0">
+		      <button type="button" class="btn btn-info btn-lg btn-block" id="newsButton" style="width:110%; background-color: #303030" onclick="window.location.href='news.html'">News</button>
+		    </div>
+		    <div class="col-md-6 padding-0">
+		      <button type="button" class="btn btn-warning btn-lg btn-block" id="eventsButton" style="width:110%; background-color: #ff8c00" onclick="window.location.href='cats.html'">Tell me a joke</button>
+		    </div>
+	  	</div>
+</div>
+
+  
+
+	<script>
+	  var output = document.getElementById('output');
+	  Leap.loop(function (frame) {
+	    output.innerHTML = 'Frame: ' + frame.id;
+	  });
+	</script>
+</body>
